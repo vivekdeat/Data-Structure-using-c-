@@ -1,0 +1,75 @@
+#include<iostream>
+using namespace std;
+
+#define max 10 //Size of stack
+
+int arr[max]; //globally declaring array
+int top=-1; //global iterable variable.
+
+//Declaring function to add elements in stack.
+void push()
+{
+	if(top==max-1)		//To check overflow condition condition.
+		cout<<"Stack Overflow"<<endl;
+	else
+	{
+		top++;
+		cout<<"Enter the number"<<endl;
+		int x;
+		cin>>x;
+		arr[top]=x;
+	}
+}
+
+//Declaring funtion to delete elements of stack.
+void pop()
+{
+	if(top==-1)
+		cout<<"No element in the stack"<<endl;
+	else
+	{
+		cout<<"Element poped"<<endl;
+		top--;
+	}
+}
+
+//Declaring function to display all the elements of the stack.
+void display()
+{
+	cout<<"The eloments are"<<endl;
+	for(int i=0;i<=top;i++)
+	{
+		cout<<"  "<<arr[i]<<endl;
+	}
+}
+
+
+int main()
+{
+	int a;
+	cout<<"1. Push\n2. pop\n3. Display\n4. Exit"<<endl;
+	while(1)
+	{
+		cout<<"Enter your choice"<<endl;
+	cin>>a;
+	switch(a)
+	{
+		case 1:
+			push();
+			break;
+		case 2:
+			pop();
+			break;
+		case 3:
+			display();
+			break;
+		case 4:
+			exit(0);
+			break;
+		default:
+			cout<<"Try again0";
+			break;
+	}
+	}
+	return 0;
+}
